@@ -1,0 +1,16 @@
+Package: om..bcftools
+Type: Package
+Version: 0.0.1
+Author: Stephen Turner
+Maintainer: Stephen Turner <vustephen@gmail.com>
+Title: Outsider module for running bcftools
+Description: Install and run bcftools from within R.
+Encoding: UTF-8
+Depends:
+    R (>= 3.3.0)
+Imports:
+    outsider.base
+Suggests:
+    outsider
+License: MIT + file LICENSE
+RoxygenNote: 7.1.1

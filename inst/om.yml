@@ -1,0 +1,12 @@
+# descriptive name of the program
+# (The explicit name of the program is determined from the R package name
+#  specified in the DESCRIPTION.)
+program: bcftools
+# any details about the program
+details: TODO write a detailed description advertising what this module does!
+    Note, newlines should be followed by four spaces.
+# the dockerhub username (optional)
+docker: stephenturner
+# repo information (optional)
+github: stephenturner
+url: https://github.com/stephenturner/om..bcftools
