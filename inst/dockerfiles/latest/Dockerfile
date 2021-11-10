@@ -1,33 +1,36 @@
 FROM debian:10
 
 # Set version number, easy to update later
-ARG BCFTOOLSVERSION="1.14"
+ARG VERSION="1.14"
 
 # Install dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    autoconf \
-    automake \
+    build-essential \
     bzip2 \
     ca-certificates \
     gcc \
     libbz2-dev \
     libcurl4-openssl-dev \
-    libgsl0-dev \
     liblzma-dev \
-    libssl-dev \
-    make \
-    ncurses-dev \
     wget \
     zlib1g-dev && \
     rm -rf /var/lib/apt/lists/* && apt-get autoclean
 
-# Install bcftools (version noted above)
-RUN wget https://github.com/samtools/bcftools/releases/download/${BCFTOOLSVERSION}/bcftools-${BCFTOOLSVERSION}.tar.bz2 && \
- tar -vxjf bcftools-${BCFTOOLSVERSION}.tar.bz2 && \
- rm bcftools-${BCFTOOLSVERSION}.tar.bz2 && \
- cd bcftools-${BCFTOOLSVERSION} && \
- make && \
- make install
+# Install bcftools
+RUN wget https://github.com/samtools/bcftools/releases/download/${VERSION}/bcftools-${VERSION}.tar.bz2 && \
+    tar -vxjf bcftools-${VERSION}.tar.bz2 && \
+    rm bcftools-${VERSION}.tar.bz2 && \
+    cd bcftools-${VERSION} && \
+    make && \
+    make install
+
+# Install htslib (tabix and bgzip)
+RUN wget https://github.com/samtools/htslib/releases/download/${VERSION}/htslib-${VERSION}.tar.bz2 && \
+    tar -vxjf htslib-${VERSION}.tar.bz2 && \
+    rm htslib-${VERSION}.tar.bz2 && \
+    cd htslib-${VERSION} && \
+    make && \
+    make install
 
 # Convenience aliases in case stepping inside container (docker run --rm -it <tag> /bin/bash)
 RUN echo 'alias l="ls -lhgGop --color=always"' >> ~/.bashrc
