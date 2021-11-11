@@ -37,12 +37,11 @@ tabix <- function(...) {
 #' @example /examples/example.R
 #' @details Find more help online \url{https://github.com/stephenturner/om..bcftools}.
 #' @export
-bgzip <- function(...) {
-  # convert the ... into a argument list
-  arglist <- arglist_get(...)
-  # create an outsider object: describe the arguments and program
+bgzip <-   function(arglist = arglist_get(...), outdir = getwd()) {
+  files_to_send <- filestosend_get(arglist)
+  arglist <- arglist_parse(arglist)
   otsdr <- outsider_init(pkgnm = 'om..bcftools', cmd = 'bgzip',
+                         wd = outdir, files_to_send = files_to_send,
                          arglist = arglist)
-  # run the command
   run(otsdr)
 }
