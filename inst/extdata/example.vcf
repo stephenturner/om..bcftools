@@ -1,0 +1,38 @@
+##fileformat=VCFv4.0
+##FILTER=<ID=PASS,Description="All filters passed">
+##source=vcfrandom
+##reference=/d2/data/references/build_37/human_reference_v37.fa
+##phasing=none
+##INFO=<ID=NS,Number=1,Type=Integer,Description="Number of samples with data">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth at the locus">
+##INFO=<ID=AC,Number=1,Type=Integer,Description="Total number of alternate alleles in called genotypes">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=AF,Number=1,Type=Float,Description="Estimated allele frequency in the range (0,1]">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Genotype Quality, the Phred-scaled marginal (or unconditional) probability of the called genotype">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##contig=<ID=1>
+##contig=<ID=2>
+##bcftools_concatVersion=1.12+htslib-1.12
+##bcftools_concatCommand=concat 1.vcf.gz 2.vcf.gz; Date=Fri Nov 12 09:06:27 2021
+##bcftools_viewVersion=1.12+htslib-1.12
+##bcftools_viewCommand=view -Oz -o example.vcf.gz; Date=Fri Nov 12 09:06:27 2021
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	example
+1	1	.	A	C,G	100	.	DP=65	GT:DP	0/1:12
+1	2	.	G	A,G	100	.	DP=41	GT:DP	0/1:77
+1	3	.	T	T,G	100	.	DP=36	GT:DP	0/1:65
+1	4	.	C	T,A	100	.	DP=0	GT:DP	0/1:77
+1	5	.	T	T,C	100	.	DP=92	GT:DP	0/1:6
+1	6	.	T	G,A	100	.	DP=57	GT:DP	0/1:7
+1	7	.	G	C,T	100	.	DP=32	GT:DP	0/1:16
+1	8	.	C	A,A	100	.	DP=94	GT:DP	0/1:76
+1	9	.	A	T,A	100	.	DP=78	GT:DP	0/1:64
+2	1	.	C	A,G	100	.	DP=10	GT:DP	0/1:21
+2	2	.	C	G,A	100	.	DP=61	GT:DP	0/1:87
+2	3	.	C	T,A	100	.	DP=20	GT:DP	0/1:0
+2	4	.	A	G,G	100	.	DP=47	GT:DP	0/1:37
+2	5	.	G	T,T	100	.	DP=49	GT:DP	0/1:71
+2	6	.	A	C,G	100	.	DP=52	GT:DP	0/1:94
+2	7	.	A	A,T	100	.	DP=74	GT:DP	0/1:78
+2	8	.	T	A,A	100	.	DP=48	GT:DP	0/1:87
+2	9	.	A	G,A	100	.	DP=3	GT:DP	0/1:48
