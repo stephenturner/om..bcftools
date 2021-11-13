@@ -1,7 +1,10 @@
 bcftools("view", "-r", "2", "inst/extdata/example.vcf.gz")
 bcftools("view", "-r", "2", "inst/extdata/example.vcf.gz", "-Ov", "-o", "2.vcf")
 bgzip("inst/extdata/2.vcf")
-tabix("-f", "vcf", "inst/extdata/2.vcf.gz")
+tabix("-f", "inst/extdata/2.vcf.gz")
+file.remove("inst/extdata/2.vcf")
+file.remove("inst/extdata/2.vcf.gz")
+file.remove("inst/extdata/2.vcf.gz.tbi")
 
 bcftools <-   function(..., output_file=NULL) {
   arglist = arglist_get(...)
@@ -26,6 +29,12 @@ bcftools <-   function(..., output_file=NULL) {
   run(otsdr)
 }
 
+bcftools("query", "inst/extdata/example.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n")
+x <- capture.output(bcftools("query", "inst/extdata/example.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n"))
+x
+
+readr::read_tsv(I(x))
+bcftools("stats", "inst/extdata/2.vcf.gz")
 bcftools("query", "inst/extdata/2.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n", output_file = "2.tsv")
 arglist <- c("query", "inst/extdata/2.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n")
 output_file = "2.tsv"
