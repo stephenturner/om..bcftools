@@ -4,7 +4,7 @@
 \alias{bgzip}
 \title{bgzip}
 \usage{
-bgzip(arglist = arglist_get(...), outdir = getwd())
+bgzip(...)
 }
 \arguments{
 \item{...}{Arguments}
