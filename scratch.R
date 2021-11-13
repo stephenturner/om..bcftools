@@ -33,6 +33,7 @@ bcftools("query", "inst/extdata/example.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%
 x <- capture.output(bcftools("query", "inst/extdata/example.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n"))
 x
 
+x <- capture.output(bcftools("query", "inst/extdata/2.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n"))
 readr::read_tsv(I(x))
 bcftools("stats", "inst/extdata/2.vcf.gz")
 bcftools("query", "inst/extdata/2.vcf.gz", "-f", "%CHROM\\t%POS\\t%ID\\t[%TGT]\\n", output_file = "2.tsv")
