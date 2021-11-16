@@ -4,10 +4,12 @@
 \alias{bcftools}
 \title{bcftools}
 \usage{
-bcftools(...)
+bcftools(..., output_file = NULL)
 }
 \arguments{
-\item{...}{Arguments}
+\item{...}{Arguments passed to bcftools}
+
+\item{output_file}{Name of output file to be written at same location as input vcf.gz}
 }
 \description{
 Run bcftools
