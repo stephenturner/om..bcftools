@@ -7,7 +7,7 @@
 bgzip(...)
 }
 \arguments{
-\item{...}{Arguments}
+\item{...}{Path to input vcf to compress with bgzip}
 }
 \description{
 Run bgzip

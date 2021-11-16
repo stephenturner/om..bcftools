@@ -7,7 +7,7 @@
 tabix(...)
 }
 \arguments{
-\item{...}{Arguments}
+\item{...}{Path to vcf.gz}
 }
 \description{
 Run tabix

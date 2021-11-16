@@ -44,10 +44,30 @@ bcftools <-   function(..., output_file=NULL) {
   invisible(file.remove(file.path(wd, "__outsider.sh")))
 }
 
+#' @name bgzip
+#' @title bgzip
+#' @description Run bgzip
+#' @param ... Path to input vcf to compress with bgzip
+#' @example /examples/example.R
+#' @details Find more help online \url{https://github.com/stephenturner/om..bcftools}.
+#' @export
+bgzip <- function(...) {
+  arglist <- arglist_get(...)
+  files_to_send <- filestosend_get(arglist)
+  if (length(files_to_send)>1L) stop("Usage: bgzip('/path/to/vcf')")
+  if (length(files_to_send)==1L && !grepl("\\.vcf$", files_to_send)) stop("Usage: bgzip('/path/to/vcf')")
+  working_dir <- normalizePath(dirname(files_to_send))
+  arglist <- arglist_parse(arglist)
+  otsdr <- outsider_init(pkgnm = 'om..bcftools', cmd = 'bgzip',
+                         wd = working_dir, files_to_send = files_to_send,
+                         arglist = arglist)
+  run(otsdr)
+}
+
 #' @name tabix
 #' @title tabix
 #' @description Run tabix
-#' @param ... Arguments
+#' @param ... Path to vcf.gz
 #' @example /examples/example.R
 #' @details Find more help online \url{https://github.com/stephenturner/om..bcftools}.
 #' @export
@@ -64,22 +84,3 @@ tabix <- function(...) {
   run(otsdr)
 }
 
-#' @name bgzip
-#' @title bgzip
-#' @description Run bgzip
-#' @param ... Arguments
-#' @example /examples/example.R
-#' @details Find more help online \url{https://github.com/stephenturner/om..bcftools}.
-#' @export
-bgzip <- function(...) {
-  arglist <- arglist_get(...)
-  files_to_send <- filestosend_get(arglist)
-  if (length(files_to_send)>1L) stop("Usage: bgzip('/path/to/vcf')")
-  if (length(files_to_send)==1L && !grepl("\\.vcf$", files_to_send)) stop("Usage: bgzip('/path/to/vcf')")
-  working_dir <- normalizePath(dirname(files_to_send))
-  arglist <- arglist_parse(arglist)
-  otsdr <- outsider_init(pkgnm = 'om..bcftools', cmd = 'bgzip',
-                         wd = working_dir, files_to_send = files_to_send,
-                         arglist = arglist)
-  run(otsdr)
-}
