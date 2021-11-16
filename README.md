@@ -17,7 +17,7 @@ library(outsider)
 module_install(repo = "stephenturner/om..bcftools")
 ```
 
-## A detailed example
+## Examples
 
 After installing the bcftools outsider module, import the `bcftools()`,
 `bgzip()`, and `tabix()` functions into your global environment.
