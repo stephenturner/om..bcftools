@@ -1,9 +1,6 @@
 
 # Run `bcftools` with `outsider` in R
 
-[![Build
-Status](https://travis-ci.org/stephenturner/om..bcftools.svg?branch=master)](https://travis-ci.org/stephenturner/om..bcftools)
-
 This module allows you to run bcftools in R via Docker. See the full
 [bcftools
 documentation](http://samtools.github.io/bcftools/bcftools.html) for
