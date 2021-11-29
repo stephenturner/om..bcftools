@@ -36,7 +36,7 @@ bcftools <-   function(..., output_file=NULL) {
   # initialise outsider container by specifying the command,
   # the arguments, the files to be sent, and the directory to where
   # returned files should be sent
-  otsdr <- outsider_init(pkgnm = 'om..bcftools', cmd = 'bash',
+  otsdr <- outsider_init(pkgnm = 'om..bcftools', cmd = 'sh',
                          arglist = '__outsider.sh', wd = wd,
                          files_to_send = c(script_path, files_to_send))
   # run the command
