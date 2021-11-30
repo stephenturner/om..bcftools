@@ -1,0 +1,39 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.1.1
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "om..bcftools" in publications use:'
+type: software
+license: MIT
+title: 'om..bcftools: Outsider module for running bcftools'
+version: 0.0.1
+abstract: Install and run bcftools from within R.
+authors:
+- family-names: Turner
+  given-names: Stephen
+  email: vustephen@gmail.com
+  orcid: https://orcid.org/0000-0001-9140-9028
+preferred-citation:
+  type: manual
+  title: 'om..bcftools: Outsider module for running bcftools'
+  authors:
+  - family-names: Turner
+    given-names: Stephen
+    email: vustephen@gmail.com
+    orcid: https://orcid.org/0000-0001-9140-9028
+  version: 0.0.1
+  abstract: Install and run bcftools from within R.
+  contact:
+  - family-names: Turner
+    given-names: Stephen
+    email: vustephen@gmail.com
+    orcid: https://orcid.org/0000-0001-9140-9028
+  license: MIT
+  year: '2021'
+contact:
+- family-names: Turner
+  given-names: Stephen
+  email: vustephen@gmail.com
+  orcid: https://orcid.org/0000-0001-9140-9028
